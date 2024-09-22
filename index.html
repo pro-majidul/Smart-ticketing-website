@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Ticketing</title>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- daisyUI CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1DD100',
+                        secondary: 'rgba(255, 255, 255, 0.8)',
+                        title: '#030712',
+                        buttonColor: '#F7F8F8',
+                        btnHover: 'rgba(3, 7, 18, 0.1)',
+                        footerColor: '#030712',
+                        busButton: 'rgba(29, 209, 0, 0.2)',
+                        coponbg: '#FFBF0F',
+                        discount: '#F78C9C'
+                    },
+                    fontFamily: {
+                        railway: 'Raleway',
+                        inter: 'Inter',
+                    }
+                }
+            }
+
+        }
+    </script>
+    <style>
+        .bgImage {
+            background-image: url('./images/banner.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+
+</head>
+
+<body class="font-inter">
+    <header class="container mx-auto">
+        <!-- navbar area design  -->
+        <nav class="py-8">
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+                    <a class=" md:text-3xl font-bold">P-Ticket</a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1">
+                        <li><a>Home</a></li>
+                        <li><a>About</a></li>
+                        <li><a>Destination</a></li>
+                        <li><a>Search</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end">
+                    <a class="btn bg-busButton hover:bg-btnHover">
+                        <span class="font-bold text-primary ">Bus</span>
+                        <img src="./images/bus-icon.png" alt="">
+                    </a>
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <ul
+                            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 -ml-40  w-52 p-2 shadow">
+                            <li><a>Home</a></li>
+                            <li><a>About</a></li>
+                            <li><a>Destination</a></li>
+                            <li><a>Search</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- brand area style  -->
+        <section class=" bgImage rounded-3xl md:h-[500px]">
+            <div class="text-center md:w-9/12 mx-auto space-y-10 py-20 ">
+                <h3 class="md:text-5xl font-bold text-primary font-railway "><span class="text-white">End-to-End Travel
+                        with </span> <br> <span class="inline-block pt-4">P Paribahan</span></h3>
+                <p class="md:text-center text-white">Yes, you can run unit tests and view the results directly within
+                    the app. The integrated testing features allow for a streamlined .</p>
+                <button class="btn bg-primary font-semibold text-sm  ">Buy Tickets</button>
+            </div>
+        </section>
+
+    </header>
+    <main>
+        <!-- 3card section  -->
+        <section class=" md:container mx-auto md:relative md:-top-20">
+            <div class="md:flex justify-between w-10/12 mx-auto items-center ">
+                <!-- 1st card -->
+                <div class="bg-white border-2 my-4 rounded-xl p-6 shadow-lg border-b-primary">
+                    <div class="flex items-end justify-center">
+                        <img src="./images/people.png" alt="">
+                        <div class="ml-3">
+                            <p class="font-bold text-black text-2xl">500K</p>
+                            <p>Registered Users</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 2nd card -->
+                <div class="bg-white border-2 rounded-xl p-6 shadow-lg border-b-primary">
+                    <div class="flex items-center ">
+                        <img src="./images/ticket-cupon.png" alt="">
+                        <div class="ml-3">
+                            <p class="font-bold text-black text-2xl">1.7 Lacks</p>
+                            <p>Ticket Sold</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 3rd card -->
+                <div class="bg-white border-2 my-4 rounded-xl p-6 shadow-lg border-b-primary">
+                    <div class="flex items-end justify-center">
+                        <img src="./images/stoppage.png" alt="">
+                        <div class="ml-3">
+                            <p class="font-bold text-black text-2xl">80K+</p>
+                            <p>Rental Partners</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- best offers of you  -->
+        <section class="pt-12  md:container mx-auto">
+            <h3 class="font-bold text-3xl text-center text-black">Best Offers For You</h3>
+            <!-- coopon card -->
+            <div class="my-6 md:flex justify-center gap-10 ">
+                <!-- 1st coopon card -->
+                <div class="bg-coponbg p-10 rounded-xl md:flex items-center justify-between  ">
+                    <!-- copon text  -->
+                    <div class=" pr-12 space-y-2 md:border-r-2 md:border-dashed">
+                        <p class="text-3xl text-center font-bold">15% OFF </p>
+                        <p class="font-bold">on your next purchase</p>
+                        <p class="text-gray-600">use by January 2024</p>
+
+                    </div>
+                    <div class="flex flex-col hidden md:block">
+                        <div class="w-8 h-8 relative -left-4 -top-16 rounded-full bg-white"></div>
+                        <div class="w-8 h-8 relative -left-4 -bottom-16 rounded-full bg-white"></div>
+                    </div>
+                    <div>
+                        <p class="font-railway font-bold text-3xl">New <span class="text-xl">15</span></p>
+                        <p class="text-gray-500">Coopon Code</p>
+                    </div>
+                </div>
+                <!-- 2nd coopom card -->
+                <div class="bg-discount p-10 rounded-xl  md:flex items-center justify-between ">
+                    <!-- copon text  -->
+                    <div class=" pr-12 space-y-2 md:border-r-2 md:border-dashed">
+                        <p class="text-3xl text-center font-bold">20% OFF </p>
+                        <p class="font-bold">on your next purchase</p>
+                        <p class="text-gray-600">use by January 2024</p>
+
+                    </div>
+                    <div class="flex flex-col hidden md:block">
+                        <div class="w-8 h-8 relative -left-4 -top-16 rounded-full bg-white"></div>
+                        <div class="w-8 h-8 relative -left-4 -bottom-16 rounded-full bg-white"></div>
+                    </div>
+                    <div>
+                        <p class="font-railway font-bold text-3xl">Couple<span class="text-xl">20</span></p>
+                        <p class="text-gray-500">Coopon Code</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="text-center pt-10">
+                <button class="btn border-primary border-2 text-xl font-bold ">See All Offers</button>
+            </div>
+        </section>
+
+        <!-- PH paribahan And Set Rate -->
+        <section class="border-t border-primary rounded-3xl bg-buttonColor mt-24 pb-24">
+            <!-- PH paribhan area -->
+            <section class="md:container mx-auto mt-20 ">
+                <h3 class="text-center text-3xl font-bold">P.H Paribahan</h3>
+                <p class="text-center w-8/12 mx-auto mt-8">Yes, you can run unit tests and view the results directly
+                    within the app. The integrated testing features allow for a streamlined .</p>
+                <div class="bg-[#ffffff] rounded-xl p-8 my-12 flex items-center">
+                    <div class="flex-1 pr-10 border-r-2 border-dashed border-blue-500">
+                        <!-- GreenLine Paribahan -->
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <img class="w-2/12" src="./images/bus-logo.png" alt="">
+                                <div class="pl-3">
+                                    <h3 class="text-xl font-bold">Greenline Paribahan</h3>
+                                    <p class="text-sm">Coach-009-WEB ! AC_Business</p>
+                                </div>
+                            </div>
+                            <div>
+                                <button class="btn bg-busButton">
+                                    <img src="./images/bus-icon.png" alt="">
+                                    <p class="text-primary">
+                                        <span id="total-seat">40</span> seats left
+                                    </p>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- GreenLine Date and time -->
+                        <div class="mt-10 bg-buttonColor rounded-3xl  p-4">
+                            <div class="flex justify-between border-b border-dashed pb-3">
+                                <p>Route</p>
+                                <h5 class="text-black font-bold">Dhaka - Sylhet</h5>
+                            </div>
+                            <div class="flex justify-between border-b border-dashed py-3">
+                                <p> Deperture Time</p>
+                                <h5 class="text-black font-bold">9:00 PM</h5>
+                            </div>
+                            <div class="pt-4 flex justify-between items-center">
+                                <button class="btn bg-btnHover  ">Boarding Point - Laxmipur</button>
+                                <button class="btn bg-btnHover ">Dropping Point - Bogura</button>
+                                <button class="btn bg-btnHover ">Est. Time - 11 Hour</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- ph middle icon style ba separate with dashed -->
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-buttonColor relative -left-6 -top-36 "></div>
+                        <div class="w-12 h-12 rounded-full bg-buttonColor relative -left-6 -bottom-36"></div>
+                    </div>
+                    <!-- 3rd part par seat taka -->
+                    <div class="p-4 ">
+                        <img src="./images/fare.png" alt="">
+                        <h3 class="text-2xl font-bold text-black">550 Taka</h3>
+                        <p>Per Seat</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ph seat booking section -->
+            <section class="container mx-auto bg-[#ffffff] rounded-xl p-8 grid grid-cols-3 gap-10 ">
+                <!-- left side  -->
+                <div class=" col-span-2 pr-10 border-r-2 border-dashed border-blue-500">
+                    <h3 class="pb-2">Select Your Seat</h3>
+                    <div class="border-y-2 border-dashed py-2 flex justify-between">
+                        <!-- left side  -->
+                        <div class="flex">
+                            <img src="./images/seat-gray.png" alt="">
+                            <p class="ml-3"> Available</p>
+                        </div>
+                        <!-- right side  -->
+                        <div class="flex">
+                            <img src="./images/seat-green-filled.png" alt="">
+                            <p class="text-primary ml-3">Selected</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-12 gap-5 items-center mt-4">
+                        <p class="col-span-10"></p>
+                        <button class="btn col-span-2 hover:bg-primary"><i
+                                class="fa-regular fa-life-ring text-2xl font-bold"></i></button>
+                    </div>
+                    <!-- A seris  -->
+                    <div class="grid grid-cols-12 pt-4 gap-5 items-center">
+                        <p class="">A</p>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">A1</button>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">A2</button>
+                        <p class="col-span-3"></p>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">A3</button>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">A4</button>
+                    </div>
+                    <!-- B seris  -->
+                    <div class="grid grid-cols-12 my-4 gap-5 items-center">
+                        <p class="">B</p>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">B1</button>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">B2</button>
+                        <p class="col-span-3"></p>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">B3</button>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">B4</button>
+                    </div>
+                    <!-- C seris  -->
+                    <div class="grid grid-cols-12 my-4 gap-5 items-center">
+                        <p class="">C</p>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">C1</button>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">C2</button>
+                        <p class="col-span-3"></p>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">C3</button>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">C4</button>
+                    </div>
+                    <!-- D seris  -->
+                    <div class="grid grid-cols-12 my-4 gap-5 items-center">
+                        <p class="">D</p>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">D1</button>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">D2</button>
+                        <p class="col-span-3"></p>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">D3</button>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">D4</button>
+                    </div>
+                    <!-- E seris  -->
+                    <div class="grid grid-cols-12 my-4 gap-5 items-center">
+                        <p class="">E</p>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">E1</button>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">E2</button>
+                        <p class="col-span-3"></p>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">E3</button>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">E4</button>
+                    </div>
+                    <!-- F seris  -->
+                    <div class="grid grid-cols-12 my-4 gap-5 items-center">
+                        <p class="">F</p>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">F1</button>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">F2</button>
+                        <p class="col-span-3"></p>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">F3</button>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">F4</button>
+                    </div>
+                    <!-- G seris  -->
+                    <div class="grid grid-cols-12 my-4 gap-5 items-center">
+                        <p class="">G</p>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">G1</button>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">G2</button>
+                        <p class="col-span-3"></p>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">G3</button>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">G4</button>
+                    </div>
+                    <!-- H seris  -->
+                    <div class="grid grid-cols-12 my-4 gap-5 items-center">
+                        <p class="">H</p>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">H1</button>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">H2</button>
+                        <p class="col-span-3"></p>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">H3</button>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">H4</button>
+                    </div>
+                    <!-- I seris  -->
+                    <div class="grid grid-cols-12 my-4 gap-5 items-center">
+                        <p class="">I</p>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">I1</button>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">I2</button>
+                        <p class="col-span-3"></p>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">I3</button>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">I4</button>
+                    </div>
+                    <!-- J seris  -->
+                    <div class="grid grid-cols-12 my-4 gap-5 items-center">
+                        <p class="">J</p>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">J1</button>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">J2</button>
+                        <p class="col-span-3"></p>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">J3</button>
+                        <button onclick="selectSeat(this)" class="col-span-2 btn hover:bg-primary">J4</button>
+                    </div>
+                </div>
+                <!-- right side  -->
+                <div class=" ">
+                    <div class="border-b-2 border-dashed pb-3">
+                        <h3>Select Your Seat</h3>
+                    </div>
+                    <div class="bg-btnHover rounded-2xl p-4 my-4">
+                        <div class=" flex justify-between">
+                            <p class=" flex ">
+                                <span class=" font-bold">Seat </span>
+                                <span id="seat-booking"
+                                    class="text-xs bg-primary rounded-full p-2 flex justify-center items-center w-4 h-4 ">0</span>
+                            </p>
+                            <p class="font-bold ">class</p>
+                            <p class="font-bold ">Prize</p>
+                        </div>
+                        <div class="border-b-2 border-dashed border-white py-2"></div>
+                        <ul id="select-seat" class="space-y-4">
+
+                            <p id="defult-text" class="text-2xl py-4 font-bold text-center text-red-500">No Seat Select </p>
+                        </ul>
+                        <div class="border-b-2 border-solid border-white py-2"></div>
+                        <div class="flex  justify-between my-5">
+                            <p class="text-black font-semibold">Total Prize:</p>
+                            <p id="total-prize">BDT *****</p>
+                        </div>
+                        <div class="flex justify-between gap-2 items-center px-2 my-4 border-y border-dashed text-lg ">
+                            <input id="input-field" class="w-full input " disabled type="text" placeholder="Have you coopon ?">
+                            <button id="input-btn"  disabled class="btn bg-primary">Apply</button>
+                        </div>
+                        <div class="flex  justify-between my-5">
+                            <p  class="text-black font-semibold">Grand Total:</p>
+                            <p id="grand-total">BDT *****</p>
+                        </div>
+                    </div>
+                    <!-- input form -->
+                    <div>
+                        <label for="">
+                            <span class="text-black font-bold">Passenger Name*</span>
+                            <input class=" border-2 border-gra-500 p-3 my-2 rounded-2xl w-full bg-white" type="text"
+                                placeholder="Enter Your Name">
+                        </label>
+                        <label for="">
+                            <span class="text-black font-bold">Phone Number*</span>
+                            <input class=" border-2 border-gra-500 p-3 my-2 rounded-2xl w-full bg-white" type="number"
+                                placeholder="Enter Your Number">
+                        </label>
+                        <label for="">
+                            <span class="text-black font-bold">Email ID*</span>
+                            <input class=" border-2 border-gra-500 p-3 my-2 rounded-2xl w-full bg-white" type="email"
+                                placeholder="Enter Your Email">
+                        </label>
+                        <button class="text-center my-5 w-full btn bg-primary text-white font-bold"
+                            disabled>Next</button>
+                    </div>
+                    <!-- term and privacy -->
+                    <div class="flex justify-between">
+                        <a class="text-sm border-b" href="#">Terms and Conditions</a>
+                        <a class="text-sm border-b" href="#">Cancellation Policy</a>
+                    </div>
+                </div>
+                </div>
+            </section>
+        </section>
+
+    </main>
+    <footer class="bg-black h-96  text-white">
+        <div class="container mx-auto py-24">
+            <div class="flex justify-between">
+                <div class="w-96">
+                    <h4 class="text-2xl font-bold ">PH Paribahan</h4>
+                    <p class="my-4 text-gray-500">P-Ticket is a digital platform to make your daily commuting better.
+                    </p>
+                </div>
+                <div>
+                    <p class="text-gray-500 mb-4">Download our app</p>
+                    <button class="btn bg-transparent hover:bg-transparent">
+                        <img src="./images/playstore.png" alt="">
+                        <span class="text-gray-500">Get It on <br>
+                            <span class="text-xl font-bold text-white">Google Play</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class=" border-gray-500 border-b border-dashed mt-10"></div>
+            <div class="flex justify-between items-center mt-5">
+                <p class="text-gray-500">@all rights reserved, P-Ticket services limited.2024</p>
+                <div class="text-gray-500">
+                    <a href="#">Terms & condition</a>
+                    <a class="px-3" href="#">Return & refund policy</a>
+                    <a href="#">Privacy policy</a>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>
