@@ -66,6 +66,9 @@ function selectSeat(event) {
 
 document.getElementById('input-btn')
     .addEventListener("click", function () {
+        const totalPrizeEl = totalPrize.innerText;
+        const totalPrizeValue = parseFloat(totalPrizeEl);
+
         let discount = 0;
         const InputFieldValue = inputField.value;
         if (InputFieldValue !== "NEW15" && InputFieldValue !=="Couple 20"){
@@ -73,20 +76,22 @@ document.getElementById('input-btn')
             return
 
         }else if(InputFieldValue == "NEW15"){
-            const totalPrizeEl = totalPrize.innerText;
-            const totalPrizeValue = parseFloat(totalPrizeEl)
-            const discount = totalPrizeValue * 0.15;
+          
+             discount = totalPrizeValue * .15;
             const remainingTotal = totalPrizeValue - discount;
             const grandTotal = document.getElementById('grand-total');
             grandTotal.innerText = remainingTotal;
         }
         else if(InputFieldValue == "Couple 20"){
-            const totalPrizeEl = totalPrize.innerText;
-            const totalPrizeValue = parseFloat(totalPrizeEl)
-            const discount = totalPrizeValue * 0.20;
+            discount = totalPrizeValue * .20;
             const remainingTotal = totalPrizeValue - discount;
             const grandTotal = document.getElementById('grand-total');
             grandTotal.innerText = remainingTotal;
         }
+        const showDiscountCoopon = document.getElementById('coopon-discount');
+        showDiscountCoopon.innerHTML = `
+            <p>Discount</p>
+            <p> <span> -BDT </span> <span> ${discount.toFixed(2)} </span></p>
+        </p>`
 
     })
