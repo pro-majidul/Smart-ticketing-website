@@ -410,7 +410,7 @@
                         </label>
                         <label for="">
                             <span class="font-bold text-black">Phone Number*</span>
-                            <input class="w-full p-3 my-2 bg-white border-2 border-gra-500 rounded-2xl" type="number"
+                            <input id="phone-number" class="w-full p-3 my-2 bg-white border-2 border-gra-500 rounded-2xl" type="number"
                                 placeholder="Enter Your Number">
                         </label>
                         <label for="">
@@ -418,8 +418,26 @@
                             <input class="w-full p-3 my-2 bg-white border-2 border-gra-500 rounded-2xl" type="email"
                                 placeholder="Enter Your Email">
                         </label>
-                        <button class="w-full my-5 font-bold text-center text-white btn bg-primary"
-                            disabled>Next</button>
+                        <button id="next-button" class="w-full my-5 font-bold text-center text-white btn bg-primary"
+                            disabled onclick="my_modal_1.showModal()">Next</button>
+
+                            <dialog id="my_modal_1" class="modal">
+                                <form method="dialog"
+                                class="modal-box px-5 py-10 flex flex-col justify-center items-center"
+                                >
+                                <i class="fa-regular fa-circle-check text-6xl text-primary"></i>
+                                <h3 class="font-bold text-2xl text-primary my-5">Congratulations</h3>
+                                <div class="text-center">
+                                <p class="font-bold">
+                                    Thank you for booking our bus seat. We are working hard to find the best Service and deals for you .
+                                </p>    
+                                </div>
+                                <p class="my-2">Shortly you will find a confirmation in your email</p>
+                                <button id="btn-continue" class="btn btn-md px-16 btn-primary hover:bg-black transition-colors ease-in duration-300 text-white">Continue</button>
+
+                                </form>
+
+                            </dialog>
                     </div>
                     <!-- term and privacy -->
                     <div class="flex justify-between">
