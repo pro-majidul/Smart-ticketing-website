@@ -88,3 +88,7 @@ phoneNumber.addEventListener("input", function (e) {
     nextButton.removeAttribute("disabled");
   }
 });
+
+document.getElementById("btn-continue").addEventListener("click", function () {
+  window.location.reload();
+});
